@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Painel · Estoque</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="topo" id="topo"></header>
+  <main class="conteudo">
+    <div id="avisos" class="avisos" role="status"></div>
+    <h1>Painel</h1>
+
+    <section class="resumo" id="resumo" aria-label="Resumo do estoque"></section>
+
+    <section>
+      <div class="cabecalho-secao">
+        <h2>Precisam de reposição</h2>
+        <a class="btn btn-leve" href="produtos.html">Ver todos os produtos</a>
+      </div>
+      <div id="alertas"></div>
+    </section>
+  </main>
+  <script src="js/db.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/painel.js"></script>
+</body>
+</html>

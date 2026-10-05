@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Produtos · Estoque</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="topo" id="topo"></header>
+  <main class="conteudo">
+    <div id="avisos" class="avisos" role="status"></div>
+
+    <div class="cabecalho-secao">
+      <h1>Produtos</h1>
+      <button type="button" class="btn btn-principal" id="btn-novo">Novo produto</button>
+    </div>
+
+    <form class="busca" id="form-busca" role="search">
+      <label for="q" class="oculto">Pesquisar produtos</label>
+      <input id="q" type="search" placeholder="Pesquisar por nome, categoria ou especificação">
+      <button type="submit" class="btn">Pesquisar</button>
+      <button type="button" class="btn btn-leve" id="btn-limpar" hidden>Limpar</button>
+    </form>
+
+    <div id="lista"></div>
+  </main>
+
+  <dialog id="dlg-produto">
+    <form id="form-produto" class="formulario" novalidate>
+      <h2 id="dlg-titulo">Novo produto</h2>
+      <div id="erros-form" class="avisos" role="alert"></div>
+
+      <label for="f-nome">Nome</label>
+      <input id="f-nome" type="text" required>
+
+      <label for="f-categoria">Categoria</label>
+      <select id="f-categoria" required></select>
+
+      <label for="f-espec">Especificações</label>
+      <textarea id="f-espec" rows="3"></textarea>
+
+      <div class="duas-colunas">
+        <div>
+          <label for="f-preco">Preço (R$)</label>
+          <input id="f-preco" type="text" inputmode="decimal" required>
+        </div>
+        <div>
+          <label for="f-minimo">Estoque mínimo</label>
+          <input id="f-minimo" type="number" min="0" step="1" value="0">
+        </div>
+      </div>
+
+      <p class="apoio" id="f-dica"></p>
+
+      <div class="botoes">
+        <button type="submit" class="btn btn-principal" id="f-salvar">Cadastrar produto</button>
+        <button type="button" class="btn btn-leve" id="f-cancelar">Cancelar</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script src="js/db.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/produtos.js"></script>
+</body>
+</html>
